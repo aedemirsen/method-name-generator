@@ -1,4 +1,4 @@
-package com.aedemirsen.methodnamegenerator;
+package com.aedemirsen.methodnamegenerator.constants;
 
 public class RestConstants {
 
@@ -11,17 +11,5 @@ public class RestConstants {
     public static final String FINAL_RESPONSE_PATH = "/choices/0/message/content";
     public static final String AUTHORIZATION = "Authorization";
     public static final String BEARER_TOKEN = "Bearer %s";
-
-    static class ExceptionConstants{
-        public static final String UNEXPECTED_ERROR = "An unexpected error occurred: %s";
-        public static final String ENVIRONMENT_VAR_ERROR = "Please provide the required environment variables " +
-                "in .env file: API_KEY, API_URL, GPT_MODEL";
-
-        public static final String TOKEN_ERROR = "Please check your API_KEY";
-
-    }
-
-
-
 
 }

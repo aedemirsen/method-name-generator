@@ -1,5 +1,7 @@
 package com.aedemirsen.methodnamegenerator;
 
+import com.aedemirsen.methodnamegenerator.model.Message;
+import com.aedemirsen.methodnamegenerator.model.Request;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.*;
@@ -7,7 +9,7 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 
-import static com.aedemirsen.methodnamegenerator.RestConstants.REQUEST_ROLE;
+import static com.aedemirsen.methodnamegenerator.constants.RestConstants.REQUEST_ROLE;
 
 public class GptServiceTest {
 

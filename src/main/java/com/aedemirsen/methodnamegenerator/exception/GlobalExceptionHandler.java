@@ -1,5 +1,6 @@
-package com.aedemirsen.methodnamegenerator;
+package com.aedemirsen.methodnamegenerator.exception;
 
+import com.aedemirsen.methodnamegenerator.constants.ExceptionConstants;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -24,6 +25,6 @@ public class GlobalExceptionHandler {
     public ResponseEntity<Object> handleException() {
         return ResponseEntity
                 .status(HttpStatus.INTERNAL_SERVER_ERROR)
-                .body(RestConstants.ExceptionConstants.TOKEN_ERROR);
+                .body(ExceptionConstants.TOKEN_ERROR);
     }
 }

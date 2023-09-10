@@ -1,5 +1,8 @@
-package com.aedemirsen.methodnamegenerator;
+package com.aedemirsen.methodnamegenerator.service;
 
+import com.aedemirsen.methodnamegenerator.constants.ExceptionConstants;
+import com.aedemirsen.methodnamegenerator.model.Message;
+import com.aedemirsen.methodnamegenerator.model.Request;
 import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.*;
@@ -8,7 +11,7 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 
-import static com.aedemirsen.methodnamegenerator.RestConstants.*;
+import static com.aedemirsen.methodnamegenerator.constants.RestConstants.*;
 
 @Service
 public class GptService {

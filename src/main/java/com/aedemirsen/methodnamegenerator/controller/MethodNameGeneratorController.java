@@ -1,5 +1,8 @@
-package com.aedemirsen.methodnamegenerator;
+package com.aedemirsen.methodnamegenerator.controller;
 
+import com.aedemirsen.methodnamegenerator.constants.ExceptionConstants;
+import com.aedemirsen.methodnamegenerator.constants.RestConstants;
+import com.aedemirsen.methodnamegenerator.service.GptService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,8 +12,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Optional;
-
-import static com.aedemirsen.methodnamegenerator.RestConstants.FINAL_RESPONSE_PATH;
 
 @RestController
 public class MethodNameGeneratorController {
@@ -28,13 +29,13 @@ public class MethodNameGeneratorController {
     public ResponseEntity<String> generateText(@RequestBody String prompt) {
         ResponseEntity<String> response = gptService.generateText(prompt);
         var methodName = getExtractedMethodName(response)
-                .orElseThrow(() -> new Exception(RestConstants.ExceptionConstants.UNEXPECTED_ERROR));
+                .orElseThrow(() -> new Exception(ExceptionConstants.UNEXPECTED_ERROR));
         return ResponseEntity.ok(methodName);
     }
 
     @SneakyThrows
     private Optional<String> getExtractedMethodName(ResponseEntity<String> generatedResponse){
         ObjectMapper objectMapper = new ObjectMapper();
-        return Optional.of(objectMapper.readTree(generatedResponse.getBody()).at(FINAL_RESPONSE_PATH).asText());
+        return Optional.of(objectMapper.readTree(generatedResponse.getBody()).at(RestConstants.FINAL_RESPONSE_PATH).asText());
     }
 }

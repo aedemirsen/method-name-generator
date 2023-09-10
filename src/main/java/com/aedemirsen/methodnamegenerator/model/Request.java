@@ -1,4 +1,4 @@
-package com.aedemirsen.methodnamegenerator;
+package com.aedemirsen.methodnamegenerator.model;
 
 import lombok.Builder;
 import lombok.Data;
