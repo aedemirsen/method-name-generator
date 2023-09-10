@@ -1,0 +1,4 @@
+method-name-generator:
+  api-key: ${API_KEY}
+  api-url: ${API_URL}
+  gpt-model: ${GPT_MODEL}

@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  method-name-generator:
+    build: .
+    environment:
+      API_KEY: ${API_KEY}
+      API_URL: ${API_URL}
+      GPT_MODEL: ${GPT_MODEL}
+    ports:
+      - ${PORT}:8080
